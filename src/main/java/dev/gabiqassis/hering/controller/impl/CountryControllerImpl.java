@@ -16,7 +16,7 @@ public class CountryControllerImpl implements CountryController {
     private final CountryMapper countryMapper;
 
     @Override
-    public ResponseEntity<CountryResponse> buscarPais(String termo) {
-        return ResponseEntity.ok(countryMapper.map(countryService.searchCountry(termo)));
+    public ResponseEntity<CountryResponse> searchCountries(String term) {
+        return ResponseEntity.ok(countryMapper.map(countryService.searchCountry(term)));
     }
 }

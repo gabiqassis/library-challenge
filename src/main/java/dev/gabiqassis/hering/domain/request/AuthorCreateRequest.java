@@ -7,14 +7,14 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Validated
 public record AuthorCreateRequest(
         @NotBlank(message = "O campo nome é obrigatório") String name,
         GenderEnum gender,
         @Email(message = "E-mail inválido") String email,
-        @JsonFormat(pattern = "dd-MM-yyyy") @NotNull(message = "O campo data de nascimento é obrigatório") Date birthDate,
+        @JsonFormat(pattern = "dd-MM-yyyy") @NotNull(message = "O campo data de nascimento é obrigatório") LocalDate birthDate,
         @NotBlank(message = "O campo país de origem é obrigatório") String countryOrigin,
         String cpf
 ) {

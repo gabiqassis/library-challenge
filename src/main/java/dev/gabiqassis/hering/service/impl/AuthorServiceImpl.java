@@ -7,7 +7,7 @@ import dev.gabiqassis.hering.domain.request.AuthorCreateRequest;
 import dev.gabiqassis.hering.domain.request.AuthorUpdateRequest;
 import dev.gabiqassis.hering.domain.response.AuthorResponse;
 import dev.gabiqassis.hering.domain.response.LiteraryWorkResponse;
-import dev.gabiqassis.hering.domain.util.ValidationCPF;
+import dev.gabiqassis.hering.domain.util.ValidationCpf;
 import dev.gabiqassis.hering.repository.AuthorRepository;
 import dev.gabiqassis.hering.service.AuthorService;
 import dev.gabiqassis.hering.service.CountryService;
@@ -35,7 +35,7 @@ public class AuthorServiceImpl implements AuthorService {
         String country = countryService.searchCountry(author.getCountryOrigin()).nomePais();
 
         if (country.equalsIgnoreCase("Brasil")) {
-            String validaredCPF = ValidationCPF.validateCPF(authorCreateRequest.cpf());
+            String validaredCPF = ValidationCpf.validateCPF(authorCreateRequest.cpf());
             author.setCpf(validaredCPF);
         } else {
             author.setCpf(null);

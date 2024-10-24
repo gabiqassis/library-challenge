@@ -52,5 +52,5 @@ public interface CountryController {
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
     @GetMapping(PAISES_BUSCAR)
-    ResponseEntity<CountryResponse> buscarPais(@RequestParam String termo);
+    ResponseEntity<CountryResponse> searchCountries(@RequestParam String termo);
 }

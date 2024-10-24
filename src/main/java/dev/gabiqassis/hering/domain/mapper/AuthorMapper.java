@@ -22,5 +22,5 @@ public interface AuthorMapper {
     @Mapping(target = "gender", ignore = true)
     @Mapping(target = "cpf", ignore = true)
     @Mapping(target = "literaryWorks", ignore = true)
-    void updateFromRequest(AuthorUpdateRequest request, @MappingTarget Author autor);
+    void updateFromRequest(AuthorUpdateRequest request, @MappingTarget Author author);
 }
