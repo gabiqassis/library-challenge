@@ -1,4 +1,4 @@
-package dev.gabiamora.hrg;
+package dev.gabiqassis.hering;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
