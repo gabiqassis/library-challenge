@@ -40,8 +40,8 @@ public class AuthorServiceImpl implements AuthorService {
         String country = countryService.searchCountry(author.getCountryOrigin()).nomePais();
 
         if (country.equalsIgnoreCase("Brasil")) {
-            String validaredCPF = ValidationCpf.validateCPF(authorCreateRequest.cpf());
-            author.setCpf(validaredCPF);
+            String validationCPF = ValidationCpf.validateCPF(authorCreateRequest.cpf());
+            author.setCpf(validationCPF);
         } else {
             author.setCpf(null);
         }
@@ -83,10 +83,10 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Transactional
     @Override
-    public AuthorResponse update(Long id, AuthorUpdateRequest autorAtualizado) {
-        Author autorExistente = this.findAutorById(id);
-        authorMapper.updateFromRequest(autorAtualizado, autorExistente);
-        return authorMapper.map(autHorRepository.save(autorExistente));
+    public AuthorResponse update(Long id, AuthorUpdateRequest authorUpdated) {
+        Author authorExisting = this.findAutorById(id);
+        authorMapper.updateFromRequest(authorUpdated, authorExisting);
+        return authorMapper.map(autHorRepository.save(authorExisting));
     }
 
     @Transactional
