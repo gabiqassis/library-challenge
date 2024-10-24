@@ -9,14 +9,14 @@ public class PathConstants {
     public static final String PALINDROME_V1 = API + "/v1/palindrome";
     public static final String NUMBER_REVERSER_V1 = API + "/v1/reverse-number";
 
-    public static final String OBRAS_V1 = API + "/v1/obras";
-    public static final String OBRAS_ID = OBRAS_V1 + "/{id}";
-    public static final String OBRAS_AUTORES = OBRAS_ID + "/autores";
+    public static final String LITERARY_WORK_V1 = API + "/v1/literarywork";
+    public static final String LITERARY_WORK_ID = LITERARY_WORK_V1 + "/{id}";
+    public static final String LITERARY_WORK_AUTHORS = LITERARY_WORK_ID + "/authors";
 
-    public static final String AUTORES_V1 = API + "/v1/autores";
-    public static final String AUTORES_ID = AUTORES_V1 + "/{id}";
-    public static final String AUTORES_OBRAS = AUTORES_ID + "/obras";
+    public static final String AUTHORS_V1 = API + "/v1/authors";
+    public static final String AUTHORS_ID = AUTHORS_V1 + "/{id}";
+    public static final String AUTHORS_LITERARY_WORK = AUTHORS_ID + "/literarywork";
 
-    public static final String PAISES_V1 = API + "/v1/paises";
-    public static final String PAISES_BUSCAR = PAISES_V1 + "/buscar";
+    public static final String COUNTRY_V1 = API + "/v1/country";
+    public static final String SEARCH_COUTRY = COUNTRY_V1 + "/search";
 }
