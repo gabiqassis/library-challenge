@@ -16,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -30,6 +31,10 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public AuthorResponse create(AuthorCreateRequest authorCreateRequest) {
+        if(authorCreateRequest.birthDate().isAfter(LocalDate.now())){
+            throw new IllegalArgumentException("A data não pode ser futura");
+        }
+
         Author author = authorMapper.map(authorCreateRequest);
 
         String country = countryService.searchCountry(author.getCountryOrigin()).nomePais();

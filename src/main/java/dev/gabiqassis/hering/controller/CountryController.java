@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static dev.gabiqassis.hering.common.constants.PathConstants.PAISES_BUSCAR;
+import static dev.gabiqassis.hering.common.constants.PathConstants.SEARCH_COUTRY;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE;
 
@@ -51,6 +51,6 @@ public interface CountryController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(PAISES_BUSCAR)
+    @GetMapping(SEARCH_COUTRY)
     ResponseEntity<CountryResponse> searchCountries(@RequestParam String termo);
 }

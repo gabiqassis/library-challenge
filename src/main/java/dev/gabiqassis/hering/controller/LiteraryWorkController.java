@@ -57,7 +57,7 @@ public interface LiteraryWorkController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(OBRAS_V1)
+    @GetMapping(LITERARY_WORK_V1)
     ResponseEntity<List<LiteraryWorkResponse>> findAll();
 
     @Operation(
@@ -94,7 +94,7 @@ public interface LiteraryWorkController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @PostMapping(OBRAS_V1)
+    @PostMapping(LITERARY_WORK_V1)
     ResponseEntity<LiteraryWorkResponse> create(@Validated @RequestBody LiteraryWorkCreateRequest obra);
 
 
@@ -132,7 +132,7 @@ public interface LiteraryWorkController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(OBRAS_ID)
+    @GetMapping(LITERARY_WORK_ID)
     ResponseEntity<LiteraryWorkResponse> findById(@PathVariable Long id);
 
     @Operation(
@@ -169,7 +169,7 @@ public interface LiteraryWorkController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(OBRAS_AUTORES)
+    @GetMapping(LITERARY_WORK_AUTHORS)
     ResponseEntity<List<AuthorResponse>> findAutoresByObraId(@PathVariable Long id);
 
     @Operation(
@@ -206,7 +206,7 @@ public interface LiteraryWorkController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @PutMapping(OBRAS_ID)
+    @PutMapping(LITERARY_WORK_ID)
     ResponseEntity<LiteraryWorkResponse> update(@PathVariable Long id, @Valid @RequestBody LiteraryWorkUpdateRequest literaryWorkUpdateRequest);
 
     @Operation(
@@ -243,6 +243,6 @@ public interface LiteraryWorkController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @DeleteMapping(OBRAS_ID)
+    @DeleteMapping(LITERARY_WORK_ID)
     ResponseEntity<Void> deleteById(@PathVariable Long id);
 }

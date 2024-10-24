@@ -55,7 +55,7 @@ public interface AuthorController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(AUTORES_V1)
+    @GetMapping(AUTHORS_V1)
     ResponseEntity<List<AuthorResponse>> findAll();
 
     @Operation(
@@ -92,7 +92,7 @@ public interface AuthorController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @PostMapping( AUTORES_V1)
+    @PostMapping(AUTHORS_V1)
     ResponseEntity<AuthorResponse> create(@RequestBody @Valid AuthorCreateRequest authorCreateRequest);
 
     @Operation(
@@ -129,7 +129,7 @@ public interface AuthorController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(AUTORES_ID)
+    @GetMapping(AUTHORS_ID)
     ResponseEntity<AuthorResponse> findById(@PathVariable Long id);
 
     @Operation(
@@ -166,7 +166,7 @@ public interface AuthorController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @GetMapping(AUTORES_OBRAS)
+    @GetMapping(AUTHORS_LITERARY_WORK)
     ResponseEntity<List<LiteraryWorkResponse>> findObrasByAutorId(@PathVariable Long id);
 
     @Operation(
@@ -203,7 +203,7 @@ public interface AuthorController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @PutMapping(AUTORES_ID)
+    @PutMapping(AUTHORS_ID)
     ResponseEntity<AuthorResponse> update(@PathVariable Long id, @Valid @RequestBody AuthorUpdateRequest autorCreateRequest);
 
     @Operation(
@@ -240,6 +240,6 @@ public interface AuthorController {
                                     mediaType = APPLICATION_PROBLEM_JSON_VALUE,
                                     schema = @Schema(implementation = ProblemDetail.class)))
             })
-    @DeleteMapping(AUTORES_ID)
+    @DeleteMapping(AUTHORS_ID)
     ResponseEntity<Void> deleteById(@PathVariable Long id);
 }
