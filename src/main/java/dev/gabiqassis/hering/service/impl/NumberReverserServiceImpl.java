@@ -13,10 +13,17 @@ public class NumberReverserServiceImpl implements NumberReverserService {
         if (number < 100 || number > 999) {
             throw new IllegalArgumentException("O número deve ser um inteiro de 3 dígitos.");
         }
+
+        String numberStr = number.toString();
+        if (numberStr.contains("0")) {
+            throw new IllegalArgumentException("O número deve ser composto apenas por dígitos de 1 a 9.");
+        }
+
         int centena = number / 100;
         int dezena = (number % 100) / 10;
         int unidade = number % 10;
         int invertido = unidade * 100 + dezena * 10 + centena;
+
         return new ReversedResponse(invertido, number);
     }
 }
