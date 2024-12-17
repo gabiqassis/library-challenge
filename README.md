@@ -1,4 +1,4 @@
-# Hering Challenge API
+# Library Challenge API
 
 API RESTful desenvolvida para o desafio técnico da Hering.
 
